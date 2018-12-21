@@ -1,5 +1,13 @@
 
 public class MyBigNumber {
+	
+	private IReceiver receiver;
+
+    public MyBigNumber(){}
+
+    public MyBigNumber(final IReceiver receiver) {
+        this.receiver = receiver;
+    }
 	public String sum(final String s1, final String s2) {
 		
 		String result="";
@@ -44,9 +52,11 @@ public class MyBigNumber {
 			result 	 = temp + result ;
 		
 		}
+		
 		if(remember >0) {
 			result =remember + result;
 		}
+		receiver.sendMessage(step);
 		return result;
 	}
 	

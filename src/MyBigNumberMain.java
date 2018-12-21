@@ -6,6 +6,8 @@ public class MyBigNumberMain {
 		Scanner sc = new Scanner(System.in);
 		MyBigNumberMain main = new MyBigNumberMain();
 		MyBigNumber s = new MyBigNumber();
+		
+		
 		System.out.print(" Nhap so thu 1: ");
 		String s1 = sc.nextLine();
 		
@@ -17,5 +19,8 @@ public class MyBigNumberMain {
 		System.out.println("Result: " + result +"\n");
 		
 	}
+	  public void sendMessage(String str) {
+	        System.out.println(str);
+	    }
 
 }
