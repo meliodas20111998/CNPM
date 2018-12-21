@@ -1,26 +1,41 @@
 import java.util.Scanner;
 
-public class MyBigNumberMain {
+public class MyBigNumberMain implements IReceiver {
+	
+	
 	public static void main(String [] args) {
+		
+		boolean successfull = false;
 		
 		Scanner sc = new Scanner(System.in);
 		MyBigNumberMain main = new MyBigNumberMain();
-		MyBigNumber s = new MyBigNumber();
+		MyBigNumber s = new MyBigNumber(main);
 		
-		
-		System.out.print(" Nhap so thu 1: ");
-		String s1 = sc.nextLine();
-		
-		System.out.print(" Nhap so thu 2: ");
-		String s2 = sc.nextLine();
-		
-		String result = s.sum(s1, s2);
-		
-		System.out.println("Result: " + result +"\n");
-		
+		System.out.println("Chao mung ban den voi phan mem cong 2 so !!! \n");
+		while(!successfull) {
+			try {
+				String input = sc.nextLine();
+				
+				String[]split = input.split(" ");
+				
+				String Result = s.sum(split[1], split[2]);
+				System.out.println("Result: " + Result +"\n" ); 	 	
+				
+				successfull = true;
+				
+			} catch (NumberFormatException e ) {
+				System.out.println ("\n" + e.getMessage()+ "\n");
+				
+			}
+		}
+			sc.close();
 	}
-	  public void sendMessage(String str) {
+	 public void sendMessage(String str) {
 	        System.out.println(str);
 	    }
-
 }
+	
+	
+	  
+
+
