@@ -1,5 +1,8 @@
 /**
- *This is MyBigNumber class.
+ * Tác giả: Nguyễn Văn Quay
+ * DesCription.
+ * Class MyBigNumber là lớp chứa 2 thuộc tính là 2 chuỗi đại diện cho 2 số.
+ * Hàm sum là hàm để thực hiện phép cộng 2 chuỗi số
  */
 public class MyBigNumber {
 	
