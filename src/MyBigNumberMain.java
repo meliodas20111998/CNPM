@@ -1,33 +1,35 @@
 import java.util.Scanner;
+/**
+ *  Hàm Main
+ * @author Nguyễn Văn Quay
+ *
+ */
 
 public class MyBigNumberMain implements IReceiver {
-	
+	/**
+	 * Main function, take number strings from input
+	 * Example: sum(59,21);
+	 */
 	
 	public static void main(String [] args) {
+	
 		
-		boolean successfull = false;
 		
 		Scanner sc = new Scanner(System.in);
 		MyBigNumberMain main = new MyBigNumberMain();
 		MyBigNumber s = new MyBigNumber(main);
 		
-		System.out.println("Chao mung ban den voi phan mem cong 2 so !!! \n");
-		while(!successfull) {
-			try {
-				String input = sc.nextLine();
-				
-				String[]split = input.split(" ");
-				
-				String Result = s.sum(split[1], split[2]);
-				System.out.println("Result: " + Result +"\n" ); 	 	
-				
-				successfull = true;
-				
-			} catch (NumberFormatException e ) {
-				System.out.println ("\n" + e.getMessage()+ "\n");
-				
-			}
+		try {
+			
+			String result = s.sum(args[0], args[1]);
+			System.out.println("Result: "+ result + "\n");
+			
+		} catch (ExNumberFormatException e) {
+			System.out.println("\n" + e.getMessage() + "\n");
+		} catch(NumberFormatException e ) {
+			System.out.println ("\n" + e.getMessage() + "\n");
 		}
+
 			sc.close();
 	}
 	 public void sendMessage(String str) {
